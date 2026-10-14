@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tusharkanjariya.github.io/browser-ai-demo/sitemap.xml

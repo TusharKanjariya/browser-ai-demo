@@ -1,0 +1,23 @@
+# Ask my blog
+
+> Semantic search over Tushar Kanjariya's Medium posts that runs entirely in the browser. The all-MiniLM-L6-v2 embedding model (about 23 MB) runs through Transformers.js. There is no API key, no backend and no vector database, and it works offline after the first load.
+
+Key facts:
+
+- 253 posts are split into 3,718 sections. Each section is a 384-dimension embedding, stored as int8 in a 1.4 MB file (`vectors.bin`).
+- The browser embeds only the reader's question, then scores every section with a dot product. Each post's best section wins.
+- A search takes about 40 ms on a desktop CPU over WebAssembly and makes zero network calls.
+- Accuracy test: the right post ranks first for 35 of 38 real reader questions, and in the top 3 for 37.
+- New posts come from the Medium RSS feed through a scheduled GitHub Action.
+
+## Links
+
+- [Live demo](https://tusharkanjariya.github.io/browser-ai-demo/): the search page
+- [Source code](https://github.com/TusharKanjariya/browser-ai-demo): static site, Node build scripts and the accuracy test
+- [README](https://github.com/TusharKanjariya/browser-ai-demo#readme): how it works, numbers, limitations
+- [Author on Medium](https://medium.com/@TusharKanjariya): Tushar Kanjariya, full-stack developer writing about AI tooling and web development
+
+## Data files
+
+- [posts.json](https://tusharkanjariya.github.io/browser-ai-demo/posts.json): post titles, subtitles, links, dates and key terms
+- [chunks.json](https://tusharkanjariya.github.io/browser-ai-demo/chunks.json): one row per section (post id, anchor, heading, short snippet)
