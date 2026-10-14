@@ -1,5 +1,20 @@
 [
  {
+  "id": "61389decaeb6",
+  "title": "Using AI Well Is a Skill. 10 Habits Built Mine.",
+  "subtitle": "My personal AI coding habits, from the first PRD to the last deploy.",
+  "url": "https://medium.com/@TusharKanjariya/using-ai-well-is-a-skill-10-habits-built-mine-61389decaeb6",
+  "date": "2026-10-14",
+  "tags": [
+   "programming",
+   "ai-agent",
+   "writing-prompts",
+   "software-development",
+   "artificial-intelligence"
+  ],
+  "image": "https://cdn-images-1.medium.com/max/400/1*m6ak3jZGIe_10SywfL4F2Q.png"
+ },
+ {
   "id": "56703206a517",
   "title": "Prompt Injection Is SQL Injection Again.",
   "subtitle": "SQL injection got fixed. Why hasn’t prompt injection?",
