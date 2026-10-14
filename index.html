@@ -38,21 +38,25 @@
   @media (max-width: 640px) { .cols.compare { grid-template-columns: 1fr; } }
   .cols h2 { font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin: 0 0 .5rem; }
   ol { list-style: none; padding: 0; margin: 0; display: grid; gap: .75rem; }
-  .card { display: flex; gap: .9rem; padding: .9rem; border: 1px solid var(--line); border-radius: 12px; background: var(--card); }
-  .card:hover { border-color: var(--accent); }
+  .card { position: relative; display: flex; gap: .9rem; padding: .9rem; border: 1px solid var(--line); border-radius: 12px; background: var(--card); }
+  .card:hover, .card:focus-within { border-color: var(--accent); }
   .card img { width: 96px; height: 64px; object-fit: cover; border-radius: 6px; flex: none; background: var(--line); }
   .compare .card img { display: none; }
   .card .body { min-width: 0; }
   .card h3 { font-size: 1.02rem; margin: 0 0 .15rem; }
   .card h3 a { color: inherit; text-decoration: none; }
-  .card h3 a:hover { text-decoration: underline; }
+  .card-link::after { content: ''; position: absolute; inset: 0; border-radius: 12px; } /* whole card is the link */
+  .card-link:focus-visible { outline: none; }
+  .card:hover h3 a { text-decoration: underline; }
   .card p { margin: 0 0 .4rem; color: var(--muted); font-size: .92rem; }
   .section { font-size: .88rem; border-left: 3px solid var(--accent); padding: .1rem 0 .1rem .6rem; margin: 0 0 .45rem; }
-  .sec-h { font-weight: 600; }
-  .section a { white-space: nowrap; font-weight: 600; }
+  .sec-h { font-weight: 600; margin-bottom: .1rem; }
+  .section { color: var(--muted); }
+  .section .sec-h { color: var(--fg); }
   .meta { font-size: .78rem; color: var(--muted); }
   .badge { font-weight: 600; color: var(--accent); }
   .badge.weak { color: var(--warn); }
+  .more { position: relative; z-index: 1; } /* sits above the card link */
   .more, .link { font: inherit; background: none; border: none; padding: 0; color: var(--accent); cursor: pointer; text-decoration: underline; }
   @media (max-width: 640px) { .card img { display: none; } }
   .empty { padding: 1rem; border: 1px dashed var(--line); border-radius: 12px; color: var(--muted); font-size: .95rem; }
@@ -69,7 +73,7 @@
 <body>
 <main>
   <h1>Ask my blog</h1>
-  <p class="lede">Describe what you're stuck on in your own words. I'll point you to the post, and the exact part of it, that helps. The AI runs inside this tab, so there's no server, no API key and no vector database.</p>
+  <p class="lede">Describe what you're stuck on in your own words. I'll point you to the post that helps, and tell you where in it to look. The AI runs inside this tab, so there's no server, no API key and no vector database.</p>
 
   <div class="search">
     <input id="q" type="search" autocomplete="off" placeholder="e.g. my site is fast but users still leave" aria-label="Search the blog">
@@ -96,7 +100,7 @@
       <li>On first visit your browser downloads a small AI model, <a href="https://huggingface.co/Xenova/all-MiniLM-L6-v2" target="_blank" rel="noopener">all-MiniLM-L6-v2</a> (about 23 MB), via <a href="https://huggingface.co/docs/transformers.js" target="_blank" rel="noopener">Transformers.js</a>. After that it's cached.</li>
       <li>Ahead of time, every post was split into its sections, and each section was turned into a list of 384 numbers (an embedding). Sections about similar ideas get similar numbers. Those numbers ship as one small file.</li>
       <li>Your question becomes 384 numbers too, right here in your browser. Every section is scored against it, and each post's best section wins. That's the whole "vector database": an array and a loop.</li>
-      <li>That's why a result can send you straight to the paragraph that answers you, not just the post.</li>
+      <li>That's why each result can tell you which section of the post answers you.</li>
       <li>New posts are picked up from my Medium RSS feed by a scheduled GitHub Action. No server involved.</li>
     </ol>
     <dl>

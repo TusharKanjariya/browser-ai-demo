@@ -1,6 +1,6 @@
 // Offline support. Own files: network first, so new posts show up when online.
 // CDN script + Medium cover images: cache first. Model files are cached by Transformers.js itself.
-const CACHE = 'blog-search-v2';
+const CACHE = 'blog-search-v3';
 const SHELL = ['./', 'index.html', 'app.js', 'search.js', 'posts.json', 'chunks.json', 'vectors.bin'];
 const CACHE_FIRST = ['cdn.jsdelivr.net', 'cdn-images-1.medium.com'];
 

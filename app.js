@@ -28,22 +28,23 @@ let similarTo = null; // a post, when showing "More like this"
 
 function card(r, kind) {
   const p = r.post;
-  const base = p.freeUrl || p.url; // friend link when there is one, so non-members can read it too
   const [, anchor, heading, snippet] = r.chunk ?? [];
   const badge = kind === 'ai'
     ? `<span class="badge${r.sem < STRONG ? ' weak' : ''}">${r.sem >= STRONG ? 'Strong match' : 'Related'} · ${r.sem.toFixed(2)}</span> · `
     : kind === 'keyword' ? `<span class="badge">${r.hits} word${r.hits > 1 ? 's' : ''} matched</span> · ` : '';
+  // Point to where the answer is in the post; the card itself opens the post.
   const section = anchor && snippet
-    ? `<div class="section"><span class="sec-h">${esc(heading || 'Intro')}</span> ${esc(snippet)}
-       <a href="${esc(base)}#${esc(anchor)}" target="_blank" rel="noopener">Jump to this part →</a></div>`
+    ? `<div class="section"><div class="sec-h">${heading ? `Find it under "${esc(heading)}"` : 'Find it in the intro'}</div>${esc(snippet)}</div>`
     : '';
+  // The title link stretches over the whole card (CSS ::after), so the card is clickable
+  // while "More like this" stays a real button instead of a button nested inside a link.
   return `<li class="card">
     ${p.image ? `<img src="${esc(p.image)}" alt="" loading="lazy">` : ''}
     <div class="body">
-      <h3><a href="${esc(base)}" target="_blank" rel="noopener">${esc(p.title)}</a></h3>
+      <h3><a class="card-link" href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a></h3>
       <p>${esc(p.subtitle)}</p>
       ${section}
-      <div class="meta">${badge}${esc(p.date)}${p.freeUrl ? ' · Free to read' : ''}
+      <div class="meta">${badge}${esc(p.date)}
         · <button type="button" class="more" data-id="${esc(p.id)}">More like this</button></div>
     </div></li>`;
 }

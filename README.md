@@ -2,7 +2,7 @@
 
 **Live demo:** https://tusharkanjariya.github.io/browser-ai-demo/
 
-Search my Medium posts by meaning, in your own words, and land on the exact section that answers you. The AI model ([all-MiniLM-L6-v2](https://huggingface.co/Xenova/all-MiniLM-L6-v2) via [Transformers.js](https://huggingface.co/docs/transformers.js)) runs in your browser tab. No backend, no API key, no vector database.
+Search my Medium posts by meaning, in your own words, and see which section of the post answers you. The AI model ([all-MiniLM-L6-v2](https://huggingface.co/Xenova/all-MiniLM-L6-v2) via [Transformers.js](https://huggingface.co/docs/transformers.js)) runs in your browser tab. No backend, no API key, no vector database.
 
 ## How it works
 
