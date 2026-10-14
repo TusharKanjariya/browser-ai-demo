@@ -146,3 +146,7 @@ Related posts:
 
 - [I Thought Pinecone Was Required for RAG](https://medium.com/@TusharKanjariya/i-thought-pinecone-was-required-for-rag-13c331d541c0)
 - [I Don't Own a GPU. These Models Don't Care.](https://medium.com/@TusharKanjariya/i-dont-own-a-gpu-these-models-don-t-care-2c35145ba5d1)
+
+## License
+
+The code is under the [MIT License](LICENSE). The post data (`posts.json`, `chunks.json`, `vectors.bin`) and the articles it points to are © Tushar Kanjariya and not covered by the MIT License.
