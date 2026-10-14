@@ -1,0 +1,14 @@
+{
+  "name": "ask-my-blog",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "sync": "node scripts/sync-rss.mjs",
+    "build": "node scripts/build-index.mjs",
+    "eval": "node scripts/eval.mjs",
+    "test": "node --test scripts/sync-rss.test.mjs"
+  },
+  "devDependencies": {
+    "@huggingface/transformers": "^4.3.1"
+  }
+}

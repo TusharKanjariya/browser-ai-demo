@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ask my blog: AI search that runs in your browser</title>
+<meta name="description" content="Search Tushar Kanjariya's Medium posts by meaning, not keywords. The AI model runs in your browser tab: no API key, no backend, no vector database.">
+<style>
+  :root { --bg: #fff; --fg: #1a1a1a; --muted: #6b6b6b; --line: #e6e6e6; --card: #fafafa; --accent: #1a8917; --warn: #b26a00; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #121212; --fg: #ececec; --muted: #9a9a9a; --line: #2c2c2c; --card: #1b1b1b; --accent: #4cc35a; --warn: #f0a640; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+  h1 { font-size: 1.7rem; margin: 0 0 .25rem; }
+  .lede { color: var(--muted); margin: 0 0 1.5rem; }
+  .search { position: relative; }
+  #q { width: 100%; padding: .9rem 1rem; font-size: 1.1rem; border: 2px solid var(--line); border-radius: 12px; background: var(--bg); color: var(--fg); }
+  #q:focus { outline: none; border-color: var(--accent); }
+  .kbd { position: absolute; right: .8rem; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: .8rem; border: 1px solid var(--line); border-radius: 4px; padding: 0 .35rem; }
+  .chips { display: flex; flex-wrap: wrap; gap: .5rem; margin: .8rem 0 1rem; }
+  .chips button, .modes button { font: inherit; font-size: .9rem; padding: .35rem .8rem; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--fg); cursor: pointer; }
+  .chips button:hover { border-color: var(--accent); }
+  @media (max-width: 640px) {
+    .chips { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+    .chips button { flex: none; }
+  }
+  @media (hover: none) { .kbd { display: none; } }
+  .bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem; margin-bottom: 1rem; }
+  .modes { display: inline-flex; gap: .25rem; }
+  .modes button[aria-pressed="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+  .modes button:disabled { opacity: .5; cursor: wait; }
+  #status { font-size: .85rem; color: var(--muted); }
+  progress { width: 100%; height: 6px; accent-color: var(--accent); }
+  .cols { display: grid; gap: 1.5rem; }
+  .cols.compare { grid-template-columns: 1fr 1fr; }
+  @media (max-width: 640px) { .cols.compare { grid-template-columns: 1fr; } }
+  .cols h2 { font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin: 0 0 .5rem; }
+  ol { list-style: none; padding: 0; margin: 0; display: grid; gap: .75rem; }
+  .card { display: flex; gap: .9rem; padding: .9rem; border: 1px solid var(--line); border-radius: 12px; background: var(--card); }
+  .card:hover { border-color: var(--accent); }
+  .card img { width: 96px; height: 64px; object-fit: cover; border-radius: 6px; flex: none; background: var(--line); }
+  .compare .card img { display: none; }
+  .card .body { min-width: 0; }
+  .card h3 { font-size: 1.02rem; margin: 0 0 .15rem; }
+  .card h3 a { color: inherit; text-decoration: none; }
+  .card h3 a:hover { text-decoration: underline; }
+  .card p { margin: 0 0 .4rem; color: var(--muted); font-size: .92rem; }
+  .section { font-size: .88rem; border-left: 3px solid var(--accent); padding: .1rem 0 .1rem .6rem; margin: 0 0 .45rem; }
+  .sec-h { font-weight: 600; }
+  .section a { white-space: nowrap; font-weight: 600; }
+  .meta { font-size: .78rem; color: var(--muted); }
+  .badge { font-weight: 600; color: var(--accent); }
+  .badge.weak { color: var(--warn); }
+  .more, .link { font: inherit; background: none; border: none; padding: 0; color: var(--accent); cursor: pointer; text-decoration: underline; }
+  @media (max-width: 640px) { .card img { display: none; } }
+  .empty { padding: 1rem; border: 1px dashed var(--line); border-radius: 12px; color: var(--muted); font-size: .95rem; }
+  details { margin-top: 2rem; border: 1px solid var(--line); border-radius: 12px; padding: .8rem 1rem; }
+  summary { cursor: pointer; font-weight: 600; }
+  dl { display: grid; grid-template-columns: max-content 1fr; gap: .3rem 1rem; font-size: .9rem; }
+  dt { color: var(--muted); }
+  dd { margin: 0; font-variant-numeric: tabular-nums; }
+  .steps { font-size: .92rem; padding-left: 1.2rem; }
+  footer { margin-top: 2rem; font-size: .85rem; color: var(--muted); }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Ask my blog</h1>
+  <p class="lede">Describe what you're stuck on in your own words. I'll point you to the post, and the exact part of it, that helps. The AI runs inside this tab, so there's no server, no API key and no vector database.</p>
+
+  <div class="search">
+    <input id="q" type="search" autocomplete="off" placeholder="e.g. my site is fast but users still leave" aria-label="Search the blog">
+    <span class="kbd" aria-hidden="true">/</span>
+  </div>
+
+  <div class="chips" id="chips" aria-label="Example searches"></div>
+
+  <div class="bar">
+    <div class="modes" role="group" aria-label="Search mode">
+      <button data-mode="ai" aria-pressed="true" disabled>AI search</button>
+      <button data-mode="keyword" aria-pressed="false">Keyword</button>
+      <button data-mode="compare" aria-pressed="false" disabled>Compare</button>
+    </div>
+    <span id="status" role="status">Loading posts...</span>
+  </div>
+  <progress id="progress" max="1" value="0" hidden></progress>
+
+  <div id="results" class="cols" aria-live="polite"></div>
+
+  <details id="how">
+    <summary>How this works (nothing you type leaves your browser)</summary>
+    <ol class="steps">
+      <li>On first visit your browser downloads a small AI model, <a href="https://huggingface.co/Xenova/all-MiniLM-L6-v2" target="_blank" rel="noopener">all-MiniLM-L6-v2</a> (about 23 MB), via <a href="https://huggingface.co/docs/transformers.js" target="_blank" rel="noopener">Transformers.js</a>. After that it's cached.</li>
+      <li>Ahead of time, every post was split into its sections, and each section was turned into a list of 384 numbers (an embedding). Sections about similar ideas get similar numbers. Those numbers ship as one small file.</li>
+      <li>Your question becomes 384 numbers too, right here in your browser. Every section is scored against it, and each post's best section wins. That's the whole "vector database": an array and a loop.</li>
+      <li>That's why a result can send you straight to the paragraph that answers you, not just the post.</li>
+      <li>New posts are picked up from my Medium RSS feed by a scheduled GitHub Action. No server involved.</li>
+    </ol>
+    <dl>
+      <dt>Runs on</dt><dd id="s-device">-</dd>
+      <dt>What's searchable</dt><dd id="s-posts">-</dd>
+      <dt>Model load</dt><dd id="s-load">-</dd>
+      <dt>Search index</dt><dd id="s-index">-</dd>
+      <dt>Last search</dt><dd id="s-query">-</dd>
+      <dt>Network calls for that search</dt><dd id="s-net">-</dd>
+      <dt>Works offline</dt><dd id="s-offline">-</dd>
+    </dl>
+  </details>
+
+  <footer>
+    By <a href="https://medium.com/@TusharKanjariya" target="_blank" rel="noopener">Tushar Kanjariya</a> ·
+    <a href="https://github.com/TusharKanjariya/browser-ai-demo" target="_blank" rel="noopener" id="source-link">Source on GitHub</a>
+  </footer>
+</main>
+<script type="module" src="app.js"></script>
+</body>
+</html>
