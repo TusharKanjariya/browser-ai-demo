@@ -1,5 +1,20 @@
 [
  {
+  "id": "a19d97c92019",
+  "title": "Anthropic Built Its Own Git. Why?",
+  "subtitle": "Anthropic’s Git problem was bigger than Git.",
+  "url": "https://medium.com/@TusharKanjariya/anthropic-built-its-own-git-why-a19d97c92019",
+  "date": "2026-10-15",
+  "tags": [
+   "programming",
+   "git",
+   "anthropic-claude",
+   "technology",
+   "artificial-intelligence"
+  ],
+  "image": "https://cdn-images-1.medium.com/max/400/1*22JLtDGr9zg6JJUhqVxkmg.png"
+ },
+ {
   "id": "61389decaeb6",
   "title": "Using AI Well Is a Skill. 10 Habits Built Mine.",
   "subtitle": "My personal AI coding habits, from the first PRD to the last deploy.",
