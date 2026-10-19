@@ -1,5 +1,20 @@
 [
  {
+  "id": "08adc8860f19",
+  "title": "Linux Has No C: Drive. Now What?",
+  "subtitle": "Where Everything Lives in Linux.",
+  "url": "https://medium.com/@TusharKanjariya/linux-has-no-c-drive-now-what-08adc8860f19",
+  "date": "2026-10-19",
+  "tags": [
+   "coding",
+   "programming",
+   "linux",
+   "terminal",
+   "software-development"
+  ],
+  "image": "https://cdn-images-1.medium.com/max/400/1*nS-Rvud3l7S9RjZdQ4QRig.png"
+ },
+ {
   "id": "d4ab73666b3a",
   "title": "I Ran an AI Model in a Browser Tab",
   "subtitle": "I wanted to run AI in the browser with no backend. So I built it. Live demo and source code inside.",
