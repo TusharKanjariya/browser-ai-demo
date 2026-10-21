@@ -1,5 +1,20 @@
 [
  {
+  "id": "5acb2a3604d5",
+  "title": "Claude Code Has Mods Now. I Built Two Small Ones.",
+  "subtitle": "One shows which account I’m using. The other tells me when Claude is waiting for me.",
+  "url": "https://medium.com/@TusharKanjariya/claude-code-has-mods-now-i-built-two-small-ones-5acb2a3604d5",
+  "date": "2026-10-21",
+  "tags": [
+   "artificial-intelligence",
+   "claude-code",
+   "generative-ai-tools",
+   "ai-agent",
+   "software-development"
+  ],
+  "image": "https://cdn-images-1.medium.com/max/400/1*HBkfadMVw0Qw9oXkzcBWTw.png"
+ },
+ {
   "id": "296a237a3c15",
   "title": "I Handled Form Error Messages Wrong for Years",
   "subtitle": "I Made This Mistake for Years. Do You?",
