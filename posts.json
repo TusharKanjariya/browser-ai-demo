@@ -1,5 +1,20 @@
 [
  {
+  "id": "f1f7f4ef758c",
+  "title": "I Found a Better Way Than clamp()",
+  "subtitle": "CSS progress() makes fluid typography easier to calculate and understand.",
+  "url": "https://medium.com/@TusharKanjariya/i-found-a-better-way-than-clamp-f1f7f4ef758c",
+  "date": "2026-10-22",
+  "tags": [
+   "web-development",
+   "javascript",
+   "css",
+   "front-end-development",
+   "programming"
+  ],
+  "image": "https://cdn-images-1.medium.com/max/400/1*UC5qpGoTUa3MTusI8sBvMw.png"
+ },
+ {
   "id": "5acb2a3604d5",
   "title": "Claude Code Has Mods Now. I Built Two Small Ones.",
   "subtitle": "One shows which account I’m using. The other tells me when Claude is waiting for me.",
