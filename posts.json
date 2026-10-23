@@ -1,5 +1,20 @@
 [
  {
+  "id": "fbde4762cc44",
+  "title": "Firefox Local Mode: Goodbye, localhost?",
+  "subtitle": "Real HTTPS for local files, no server needed. One catch.",
+  "url": "https://medium.com/@TusharKanjariya/firefox-local-mode-goodbye-localhost-fbde4762cc44",
+  "date": "2026-10-23",
+  "tags": [
+   "web-development",
+   "programming",
+   "productivity-tools",
+   "coding",
+   "javascript"
+  ],
+  "image": "https://cdn-images-1.medium.com/max/400/1*K1QTVVloslO1Q7PWJZ435w.png"
+ },
+ {
   "id": "f1f7f4ef758c",
   "title": "I Found a Better Way Than clamp()",
   "subtitle": "CSS progress() makes fluid typography easier to calculate and understand.",
