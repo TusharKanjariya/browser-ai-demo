@@ -1,5 +1,20 @@
 [
  {
+  "id": "465cb0b4889e",
+  "title": "I Ignored These Git Commands for Years",
+  "subtitle": "Even AI Might Not Suggest These Git Commands.",
+  "url": "https://medium.com/@TusharKanjariya/i-ignored-these-git-commands-for-years-465cb0b4889e",
+  "date": "2026-10-26",
+  "tags": [
+   "software-development",
+   "coding",
+   "github",
+   "git",
+   "programming"
+  ],
+  "image": "https://cdn-images-1.medium.com/max/400/1*SluFCX7zyPJm1H_2AhYITQ.png"
+ },
+ {
   "id": "fbde4762cc44",
   "title": "Firefox Local Mode: Goodbye, localhost?",
   "subtitle": "Real HTTPS for local files, no server needed. One catch.",
