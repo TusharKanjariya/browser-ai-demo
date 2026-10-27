@@ -1,5 +1,20 @@
 [
  {
+  "id": "bcb139abf10d",
+  "title": "I Debugged JavaScript Wrong for Years",
+  "subtitle": "When the AI’s fix doesn’t work, these tools show what actually ran.",
+  "url": "https://medium.com/@TusharKanjariya/i-debugged-javascript-wrong-for-years-bcb139abf10d",
+  "date": "2026-10-27",
+  "tags": [
+   "artificial-intelligence",
+   "programming",
+   "web-development",
+   "javascript",
+   "software-development"
+  ],
+  "image": "https://cdn-images-1.medium.com/max/400/1*Bfsgkq0G6jHoa4gOo14QDw.png"
+ },
+ {
   "id": "465cb0b4889e",
   "title": "I Ignored These Git Commands for Years",
   "subtitle": "Even AI Might Not Suggest These Git Commands.",
