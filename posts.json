@@ -1,5 +1,20 @@
 [
  {
+  "id": "6b36df290707",
+  "title": "I Ignored These HTML Attributes for Years",
+  "subtitle": "AI still writes JavaScript for these. One HTML attribute does it.",
+  "url": "https://medium.com/@TusharKanjariya/i-ignored-these-html-attributes-for-years-6b36df290707",
+  "date": "2026-10-29",
+  "tags": [
+   "javascript",
+   "web-development",
+   "html",
+   "programming",
+   "front-end-development"
+  ],
+  "image": "https://cdn-images-1.medium.com/max/400/1*hWuIgsfenkuvepzjt2TjmA.png"
+ },
+ {
   "id": "bcb139abf10d",
   "title": "I Debugged JavaScript Wrong for Years",
   "subtitle": "When the AI’s fix doesn’t work, these tools show what actually ran.",
