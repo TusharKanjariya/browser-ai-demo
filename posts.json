@@ -1,5 +1,20 @@
 [
  {
+  "id": "b9bd7c7ce9ca",
+  "title": "My Manager Thinks Everything Can Be Built in an Hour Now",
+  "subtitle": "AI writes the code in an hour. The rest still takes days.",
+  "url": "https://medium.com/@TusharKanjariya/my-manager-thinks-everything-can-be-built-in-an-hour-now-b9bd7c7ce9ca",
+  "date": "2026-10-30",
+  "tags": [
+   "programming",
+   "software-development",
+   "artificial-intelligence",
+   "productivity",
+   "software-engineering"
+  ],
+  "image": "https://cdn-images-1.medium.com/max/400/1*xFP6A5YZm3Jb6KoDIAKhCw.png"
+ },
+ {
   "id": "6b36df290707",
   "title": "I Ignored These HTML Attributes for Years",
   "subtitle": "AI still writes JavaScript for these. One HTML attribute does it.",
