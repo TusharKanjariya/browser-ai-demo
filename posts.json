@@ -1,5 +1,20 @@
 [
  {
+  "id": "49ff3d454adc",
+  "title": "I Ignored These VS Code Features for Years",
+  "subtitle": "The shortcuts and tools I wish I’d discovered sooner.",
+  "url": "https://medium.com/@TusharKanjariya/i-ignored-these-vs-code-features-for-years-49ff3d454adc",
+  "date": "2026-11-05",
+  "tags": [
+   "vscode",
+   "productivity",
+   "web-development",
+   "software-development",
+   "programming"
+  ],
+  "image": "https://cdn-images-1.medium.com/max/400/1*2egeXihzi5LDdPCxw9OFBA.png"
+ },
+ {
   "id": "984411af1de4",
   "title": "I Used npm Wrong for Years",
   "subtitle": "AI knows npm install. What about the rest?",
