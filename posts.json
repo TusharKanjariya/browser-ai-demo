@@ -1,5 +1,20 @@
 [
  {
+  "id": "863b194a0b94",
+  "title": "The Domain Separation Trick That Could Save Your Platform",
+  "subtitle": "Ever noticed github.com vs github.io, or vercel.com vs vercel.app?",
+  "url": "https://levelup.gitconnected.com/the-domain-separation-trick-that-could-save-your-platform-863b194a0b94",
+  "date": "2026-11-13",
+  "tags": [
+   "programming",
+   "web-security",
+   "cybersecurity",
+   "web-development",
+   "software-engineering"
+  ],
+  "image": "https://cdn-images-1.medium.com/max/400/1*T75EEeE13sBahvaI3oR8lg.jpeg"
+ },
+ {
   "id": "0a6c73316db6",
   "title": "I Can Tell Your Website Was AI Generated",
   "subtitle": "17 design tells give it away. Here’s what to use instead.",
