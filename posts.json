@@ -1,5 +1,20 @@
 [
  {
+  "id": "cabf7523a9d1",
+  "title": "Should Your Website Block AI Agents or Feed Them?",
+  "subtitle": "Medium protects its paywall. Some website invites AI agents in. Here’s what I learned.",
+  "url": "https://medium.com/@TusharKanjariya/should-your-website-block-ai-agents-or-feed-them-cabf7523a9d1",
+  "date": "2026-11-18",
+  "tags": [
+   "web-development",
+   "programming",
+   "artificial-intelligence",
+   "ai-agent",
+   "seo"
+  ],
+  "image": "https://cdn-images-1.medium.com/max/400/1*6qKKYHA6TNz5pgJ07AVGbg.jpeg"
+ },
+ {
   "id": "246a41a0e2ec",
   "title": "I Ignored Print CSS for Years",
   "subtitle": "I thought my pages were ready. Ctrl+P proved me wrong.",
