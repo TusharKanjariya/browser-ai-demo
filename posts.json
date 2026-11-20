@@ -1,5 +1,20 @@
 [
  {
+  "id": "85f8dc389a28",
+  "title": "I Stopped Putting Secrets in .env Files",
+  "subtitle": "Can an AI agent or an npm package read your API keys?",
+  "url": "https://medium.com/@TusharKanjariya/i-stopped-putting-secrets-in-env-files-85f8dc389a28",
+  "date": "2026-11-20",
+  "tags": [
+   "cybersecurity",
+   "web-development",
+   "software-development",
+   "nodejs",
+   "programming"
+  ],
+  "image": "https://cdn-images-1.medium.com/max/400/1*9xcfhrZvSPq5LX7gxK57MA.jpeg"
+ },
+ {
   "id": "cabf7523a9d1",
   "title": "Should Your Website Block AI Agents or Feed Them?",
   "subtitle": "Medium protects its paywall. Some website invites AI agents in. Here’s what I learned.",
