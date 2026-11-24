@@ -1,5 +1,20 @@
 [
  {
+  "id": "48bae956f246",
+  "title": "Your AI Is Exactly as Smart as You Are",
+  "subtitle": "Same AI. Different Person. The difference is what you know.",
+  "url": "https://medium.com/@TusharKanjariya/your-ai-is-exactly-as-smart-as-you-are-48bae956f246",
+  "date": "2026-11-23",
+  "tags": [
+   "programming",
+   "technology",
+   "artificial-intelligence",
+   "software-development",
+   "writing-prompts"
+  ],
+  "image": "https://cdn-images-1.medium.com/max/400/1*f0qEfE4489QxsyEa-q6uiw.jpeg"
+ },
+ {
   "id": "85f8dc389a28",
   "title": "I Stopped Putting Secrets in .env Files",
   "subtitle": "Can an AI agent or an npm package read your API keys?",
