@@ -1,5 +1,20 @@
 [
  {
+  "id": "a666e01802e6",
+  "title": "CMD and PowerShell Look Similar. That’s the Problem.",
+  "subtitle": "Two shells. Similar commands. Very different results.",
+  "url": "https://medium.com/@TusharKanjariya/cmd-and-powershell-look-similar-thats-the-problem-a666e01802e6",
+  "date": "2026-11-25",
+  "tags": [
+   "technology",
+   "terminal",
+   "software-development",
+   "windows",
+   "programming"
+  ],
+  "image": "https://cdn-images-1.medium.com/max/400/1*_wz7291l1iUK710JkvpnkQ.jpeg"
+ },
+ {
   "id": "48bae956f246",
   "title": "Your AI Is Exactly as Smart as You Are",
   "subtitle": "Same AI. Different Person. The difference is what you know.",
